@@ -1,0 +1,18 @@
+[project]
+name = "course-pytorch-tensors"
+version = "0.1.0"
+description = "Практический курс по API тензоров PyTorch"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.4,<3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3,<9",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["."]
+
