@@ -22,6 +22,13 @@ def main() -> None:
             )
             missing = [path.name for path in expected if not path.is_file()]
             assert not missing, f"{exercise.relative_to(ROOT)}: отсутствуют {missing}"
+            readme = expected[0].read_text(encoding="utf-8")
+            assert "## Задание" in readme or theme.name < "09_", (
+                f"{exercise.relative_to(ROOT)}: в README нет раздела задания"
+            )
+            assert "https://docs.pytorch.org/" in readme, (
+                f"{exercise.relative_to(ROOT)}: нет ссылки на документацию PyTorch"
+            )
             for source in expected[1:]:
                 ast.parse(source.read_text(encoding="utf-8"), filename=str(source))
     print(
