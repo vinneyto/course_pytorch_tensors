@@ -62,7 +62,7 @@ uv run python scripts/check_course.py
 10. `10_advanced_broadcasting` — многомерный broadcasting и выбор оси для `unsqueeze`.
 11. `11_advanced_indexing` — integer indexing, `gather`, `scatter` и `where`.
 12. `12_reductions_and_axes` — reduction по нескольким осям и `keepdim`.
-13. `13_linear_algebra` — матричные и пакетные матричные операции.
+13. `13_linear_algebra` — матричные и пакетные операции, диагонали матриц.
 14. `14_shape_drills` — короткие тренировки чтения и преобразования форм.
 15. `15_tensor_grids` — координатные сетки и `meshgrid`.
 
