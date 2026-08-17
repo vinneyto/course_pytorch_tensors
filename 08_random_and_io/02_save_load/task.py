@@ -4,9 +4,11 @@ import torch
 
 def save_pair(path: str | Path, x: torch.Tensor, y: torch.Tensor) -> None:
     """Сохранить пару тензоров в одном файле."""
-    raise NotImplementedError
+    torch.save({"x": x, "y": y}, path)
 
 
 def load_pair(path: str | Path) -> tuple[torch.Tensor, torch.Tensor]:
     """Безопасно загрузить ранее сохранённую пару."""
-    raise NotImplementedError
+    result = torch.load(path, weights_only=True)
+    print(result)
+    return (result["x"], result["y"])
